@@ -236,7 +236,7 @@ function passarfase2() {
   
     if (passandofase2) {
       if (charY >= 485 && charY <= 625 && charX > 730 && charX < 885 && keyIsDown(32)) {
-        tela = 1;
+        tela = 7;
         charX = 30;
         info = true;
       }

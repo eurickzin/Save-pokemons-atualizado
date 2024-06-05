@@ -24,6 +24,7 @@ var venusaur;
 var personagem;
 var missao1;
 var missao2;
+var missao3;
 var pidgeotto;
 var squirtlefase1;
 var pikachufase1;
@@ -31,16 +32,25 @@ var beedrill;
 var poliwag;
 var pokedexfase1;
 var pokedexfase2;
+var pokedexfase3;
 var comando;
 var pokebola;
 var pokecentro;
 var infoicone;
 var fundofase2;
+var fundofase3;
 var plataforma2;
+var plataforma3;
 var spearow;
 var golbat;
 var sandslash;
 var dugtrio;
+var pidgey;
+var venonat;
+var arbok;
+var eevee;
+var miau;
+var butterfree;
 
 function preload(){
   fundo = loadImage("imagensfase1/fundo.png");
@@ -89,6 +99,18 @@ function preload(){
   dugtrio = loadImage("imagensfase2/diglett2.png");
   sandslash = loadImage("imagensfase2/sandslash2.png");
   pokedexfase2 = loadImage("imagensfase2/pokedex2.png");
+
+  //IMAGENS FASE 3
+  fundofase3 = loadImage("imagensfase3/fundofase3.png")
+  missao3 = loadImage("imagensfase3/missao3.png");
+  plataforma3 = loadImage("imagensfase3/plataforma3.png");
+  pidgey = loadImage("imagensfase3/pidgey.png");
+  venonat = loadImage("imagensfase3/venonat.png");
+  eevee = loadImage("imagensfase3/eevee.png");
+  arbok = loadImage("imagensfase3/arbok.png");
+  miau = loadImage("imagensfase3/miau.png");
+  butterfree = loadImage("imagensfase3/butterfree.png");
+  pokedexfase3 = loadImage("imagensfase3/pokedex3.png");
 }
 
 
@@ -309,6 +331,19 @@ function draw() {
       tela = 5;
     }
 
+  }
+  if (tela == 7){//FASE 3
+    drawfase3()
+    if (keyIsDown(80)){
+      tela = 8;
+    }
+
+  }
+  if(tela == 8){//POKEDEX FASE 3
+    background(pokedexfase3);
+    if (keyIsDown(80)){
+      tela = 7;
+    }
   }
 }
 
