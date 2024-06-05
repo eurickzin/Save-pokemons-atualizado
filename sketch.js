@@ -23,16 +23,24 @@ var bullba;
 var venusaur;
 var personagem;
 var missao1;
+var missao2;
 var pidgeotto;
 var squirtlefase1;
 var pikachufase1;
 var beedrill;
 var poliwag;
 var pokedexfase1;
+var pokedexfase2;
 var comando;
 var pokebola;
 var pokecentro;
 var infoicone;
+var fundofase2;
+var plataforma2;
+var spearow;
+var golbat;
+var sandslash;
+var dugtrio;
 
 function preload(){
   fundo = loadImage("imagensfase1/fundo.png");
@@ -52,7 +60,7 @@ function preload(){
   gengar = loadImage("imagensfase1/gengar.png");
   charmander = loadImage("imagensfase1/charmander.png");
   
-  //IMAGENS FASE1
+  //IMAGENS FASE 1
   ceu = loadImage("imagensfase1/ceu.png");
   chao = loadImage("imagensfase1/chao.png");
   porta = loadImage("imagensfase1/porta.png");
@@ -70,7 +78,17 @@ function preload(){
   comando = loadImage("imagensfase1/pressioneatecla.png");
   pokebola = loadImage("imagensfase1/pokebola.png");
   pokecentro = loadImage("imagensfase1/pokecentro.png");
-  infoicone = loadImage("imagensfase1/info.png")
+  infoicone = loadImage("imagensfase1/info.png");
+
+  //IMAGENS FASE 2
+  fundofase2 = loadImage("imagensfase2/fundonivel2.png");
+  plataforma2 = loadImage("imagensfase2/plataformanivel2.png");
+  missao2 = loadImage("imagensfase2/missao2.png");
+  spearow = loadImage("imagensfase2/spearow2.png");
+  golbat = loadImage("imagensfase2/golbat2.png");
+  dugtrio = loadImage("imagensfase2/diglett2.png");
+  sandslash = loadImage("imagensfase2/sandslash2.png");
+  pokedexfase2 = loadImage("imagensfase2/pokedex2.png");
 }
 
 
@@ -84,7 +102,7 @@ function setup() {
 
 function draw() {
   
-  if(tela == 0){//INICIO DO MENU 0
+  if(tela == 0){//MENU 
     background(fundo);
     
     fill("#fff");
@@ -136,7 +154,7 @@ function draw() {
     
     
   }//FIM DO MENU 0
-  if(tela == 1){//INICIO JOGAR 1
+  if(tela == 1){//FASE 1
     
     drawfase1();
     if (keyIsDown(80)){
@@ -144,7 +162,7 @@ function draw() {
     }
     
    }//FIM JOGAR 1
-  if(tela == 2){//INICIO TELA 2
+  if(tela == 2){//CONTROLES
     background(fundo2);
     
     fill("#fff");
@@ -193,7 +211,7 @@ function draw() {
     
     
   }//FIM TELA 2
-  if(tela == 3){//INICIO TELA 3
+  if(tela == 3){//CRÉDITOS
     background(fundo2);
     fill("#fff");
     rect(780, 15, 100, 80,20)
@@ -272,10 +290,23 @@ function draw() {
     
     
   }//FIM TELA 3
-  if(tela == 4){
+  if(tela == 4){//POKEDEX FASE 1
     background(pokedexfase1);
     if (keyIsDown(80)){
       tela = 1;
+    }
+
+  }
+  if(tela == 5){//FASE 2
+    drawfase2();
+    if (keyIsDown(80)){
+      tela = 6;
+    }
+  }
+  if(tela == 6){//POKEDEX FASE 2
+    background(pokedexfase2);
+    if (keyIsDown(80)){
+      tela = 5;
     }
 
   }

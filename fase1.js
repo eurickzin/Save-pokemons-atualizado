@@ -8,9 +8,7 @@ var beedrillcapturado = false;
 var passandofase = false;
 var info = true;
 
-function setup() {
-  createCanvas(900, 700);
-}
+
 
 function drawfase1() {
   background(ceu);
@@ -42,7 +40,6 @@ function drawfase1() {
   text("MENU", 55, 57);
 
   image(chao, 0, 200, 900, 500); // CHÃO
-
   if (capturados < 3) {
     image(porta, 730, 485, 150, 140); // PORTA
   } else {
@@ -261,7 +258,9 @@ function passarfase() {
 
   if (passandofase) {
     if (charY >= 485 && charY <= 625 && charX > 730 && charX < 885 && keyIsDown(32)) {
-      tela = 0;
+      tela = 5;
+      charX = 30;
+      info = true;
     }
   }
 }
