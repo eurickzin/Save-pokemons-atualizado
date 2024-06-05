@@ -32,6 +32,7 @@ var pokedexfase1;
 var comando;
 var pokebola;
 var pokecentro;
+var infoicone;
 
 function preload(){
   fundo = loadImage("imagensfase1/fundo.png");
@@ -68,7 +69,8 @@ function preload(){
   pokedexfase1 = loadImage("imagensfase1/pokedexfase1.png");
   comando = loadImage("imagensfase1/pressioneatecla.png");
   pokebola = loadImage("imagensfase1/pokebola.png");
-  pokecentro = loadImage("imagensfase1/pokecentro.png")
+  pokecentro = loadImage("imagensfase1/pokecentro.png");
+  infoicone = loadImage("imagensfase1/info.png")
 }
 
 

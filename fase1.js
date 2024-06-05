@@ -6,6 +6,7 @@ var pikachucapturado = false;
 var poliwagcapturado = false;
 var beedrillcapturado = false;
 var passandofase = false;
+var info = true;
 
 function setup() {
   createCanvas(900, 700);
@@ -48,7 +49,12 @@ function drawfase1() {
     image(pokecentro, 730, 485, 150, 140); // POKÉCENTRO
   }
 
-  image(missao1, 220, 10, 400, 200); // MISSÃO
+  if (info == true) {
+    image(missao1, 250, 10, 400, 200); // MISSÃO
+  } else {
+    image(infoicone, 425, 20, 50, 50);
+  }
+   
   image(comando, 350, 618, 160, 80); // COMANDO
 
   // Desenho das plataformas
@@ -85,7 +91,7 @@ function drawfase1() {
     image(poliwag, 665, 350, 80, 70); // POLIWAG
   }
 
-  text(capturados, 100, 200, 300); // Contador de capturados
+  text(capturados, 700, 30); // Contador de capturados
 
   drawCharacter();
   colisaoPorBaixo();
@@ -98,6 +104,8 @@ function drawfase1() {
 function keyPressed() {
   if (keyCode == 87) {
     jumpPressed();
+  } else if (keyCode == 73) { // Tecla "I"
+    info = !info; // Alterna o estado da variável info
   }
 }
 
@@ -187,25 +195,25 @@ function queda() {
 }
 
 function captura() {
-  if (charY > 345 && charY < 375 && charX > 150 && charX < 250 && keyIsDown(69)) {
+  if (charY > 345 && charY < 375 && charX > 150 && charX < 250 && keyIsDown(69)) {//CAPTURA SQUIRTLE
     if (!squirtlecapturado) {
       squirtlecapturado = true;
       capturados++;
     }
   }
-  if (charY > 245 && charY < 275 && charX > 520 && charX < 620 && keyIsDown(69)) {
+  if (charY > 245 && charY < 275 && charX > 520 && charX < 620 && keyIsDown(69)) {//CAPTURA PIDGEOTTO
     if (!pidgeottocapturado) {
       pidgeottocapturado = true;
       capturados++;
     }
   }
-  if (charY > 145 && charY < 175 && charX > 120 && charX < 220 && keyIsDown(69)) {
+  if (charY > 145 && charY < 175 && charX > 105 && charX < 165 && keyIsDown(69)) {//CAPTURA VENUSAUR
     if (!venusaurcapturado) {
       venusaurcapturado = true;
       capturados++;
     }
   }
-  if (charY > 245 && charY < 275 && charX > 320 && charX < 420 && keyIsDown(69)) {
+  if (charY > 245 && charY < 275 && charX > 320 && charX < 420 && keyIsDown(69)) {//CAPTURA PIKACHU
     if (!pikachucapturado) {
       pikachucapturado = true;
       // Reset Pokémons
@@ -218,7 +226,7 @@ function captura() {
       capturados = 0;
     }
   }
-  if (charY > 145 && charY < 175 && charX > 685 && charX < 785 && keyIsDown(69)) {
+  if (charY > 145 && charY < 175 && charX > 685 && charX < 785 && keyIsDown(69)) {//CAPTURA BEEDRILL
     if (!beedrillcapturado) {
       beedrillcapturado = true;
       // Reset Pokémons
@@ -231,7 +239,7 @@ function captura() {
       capturados = 0;
     }
   }
-  if (charY > 345 && charY < 375 && charX > 665 && charX < 765 && keyIsDown(69)) {
+  if (charY > 345 && charY < 375 && charX > 630 && charX < 720 && keyIsDown(69)) {//CAPTURA POLIWAG
     if (!poliwagcapturado) {
       poliwagcapturado = true;
       // Reset Pokémons
