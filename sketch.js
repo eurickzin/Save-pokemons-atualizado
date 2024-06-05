@@ -30,7 +30,8 @@ var beedrill;
 var poliwag;
 var pokedexfase1;
 var comando;
-
+var pokebola;
+var pokecentro;
 
 function preload(){
   fundo = loadImage("imagensfase1/fundo.png");
@@ -66,7 +67,8 @@ function preload(){
   poliwag = loadImage("imagensfase1/poliwag.png");
   pokedexfase1 = loadImage("imagensfase1/pokedexfase1.png");
   comando = loadImage("imagensfase1/pressioneatecla.png");
-
+  pokebola = loadImage("imagensfase1/pokebola.png");
+  pokecentro = loadImage("imagensfase1/pokecentro.png")
 }
 
 
