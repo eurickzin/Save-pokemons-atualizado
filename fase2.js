@@ -239,6 +239,14 @@ function passarfase2() {
         tela = 7;
         charX = 30;
         info = true;
+        // Reset Pokémons
+        spearowcapturado = false;
+        golbatcapturado = false;
+        sandslashcapturado = false;
+        psyduckcapturado = false;
+        charmandercapturado = false;
+        dugtriocapturado = false;
+        capturados2 = 0;
       }
     }
   }

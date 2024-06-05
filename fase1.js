@@ -261,6 +261,14 @@ function passarfase() {
       tela = 5;
       charX = 30;
       info = true;
+      //reset Pokémons 
+      squirtlecapturado = false;
+      venusaurcapturado = false;
+      pidgeottocapturado = false;
+      pikachucapturado = false;
+      poliwagcapturado = false;
+      beedrillcapturado = false;
+      capturados = 0;
     }
   }
 }

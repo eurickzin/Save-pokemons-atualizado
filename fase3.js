@@ -80,6 +80,8 @@ function drawfase3(){
     colisaoPorCima3();
     colisaoPorBaixo3();
     queda3()
+    captura3()
+    passarfase3()
 }
 
 function colisaoPorCima3() {
@@ -163,6 +165,93 @@ function queda3() {
           state = falling;
           chaoY = 580;
         }
+      }
+    }
+  }
+
+  function captura3() {
+    if (charY > 345 && charY < 375 && charX > 150 && charX < 250 && keyIsDown(69)) {//CAPTURA SPEAROW
+      if (!eeveecapturado) {
+        eeveecapturado = true;
+        //reset pokemons
+        arbokcapturado = false;
+        butterfreecapturado = false;
+        pidgeycapturado = false;
+        miaucapturado = false;
+        eeveecapturado = false;
+        venonatcapturado = false;
+
+        capturados3 = 0;
+      }
+    }
+    if (charY > 145 && charY < 175 && charX > 105 && charX < 165 && keyIsDown(69)) {//CAPTURA GOLBAT
+        if (!butterfreecapturado) {
+          butterfreecapturado = true;
+          capturados3++;
+        }
+      }
+      if (charY > 345 && charY < 375 && charX > 630 && charX < 720 && keyIsDown(69)) {//CAPTURA SANDSLASH
+        if (!miaucapturado) {
+          miaucapturado = true;
+          arbokcapturado = false;
+          butterfreecapturado = false;
+          pidgeycapturado = false;
+          miaucapturado = false;
+          eeveecapturado = false;
+          venonatcapturado = false;
+
+          capturados3 = 0;
+        }
+      }
+    if (charY > 245 && charY < 275 && charX > 520 && charX < 620 && keyIsDown(69)) {//CAPTURA CHARMANDER
+      if (!venonatcapturado) {
+        venonatcapturado = true;
+        //Reset Pokémon
+        arbokcapturado = false;
+        butterfreecapturado = false;
+        pidgeycapturado = false;
+        miaucapturado = false;
+        eeveecapturado = false;
+        venonatcapturado = false;
+
+        capturados3 = 0;
+      }
+    }
+    
+    if (charY > 245 && charY < 275 && charX > 320 && charX < 420 && keyIsDown(69)) {//CAPTURA PSYDUCK
+      if (!pidgeycapturado) {
+        pidgeycapturado = true;
+        capturados3 ++;
+      }
+    }
+    if (charY > 145 && charY < 175 && charX > 685 && charX < 785 && keyIsDown(69)) {//CAPTURA DUGTRIO
+      if (!arbokcapturado) {
+        arbokcapturado = true;
+        capturados3++;
+      }
+    }
+    
+  }
+
+  function passarfase3() {
+    if (capturados2 >= 3) {
+      passandofase2 = true;
+    }
+  
+    if (passandofase2) {
+      if (charY >= 485 && charY <= 625 && charX > 730 && charX < 885 && keyIsDown(32)) {
+        tela = 0;
+        charX = 30;
+        info = true;
+        //Reset Pokémon
+        arbokcapturado = false;
+        butterfreecapturado = false;
+        pidgeycapturado = false;
+        miaucapturado = false;
+        eeveecapturado = false;
+        venonatcapturado = false;
+
+        capturados3 = 0;
       }
     }
   }
