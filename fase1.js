@@ -12,22 +12,22 @@ var info = true;
 
 function drawfase1() {
   background(ceu);
-  fill("#fff");
-  rect(780, 15, 100, 80, 20);
-  var mouse = `X: ${mouseX}\nY: ${mouseY}`;
-  fill(0);
-  stroke(0);
-  textSize(25);
-  text(mouse, 800, 45); // POSIÇÃO DO MOUSE
+  // fill("#fff");
+  // rect(780, 15, 100, 80, 20);
+  // var mouse = `X: ${mouseX}\nY: ${mouseY}`;
+  // fill(0);
+  // stroke(0);
+  // textSize(25);
+  // text(mouse, 800, 45); // POSIÇÃO DO MOUSE
   
-  fill("#fff");
-  rect(780, 100, 100, 80, 20);
-  fill(0);
-  stroke(0);
-  textSize(25);
-  text(state, 800, 120); // ESTADO DO PERSONAGEM
-  text(charX, 800, 150); // POSIÇÃO PERSONAGEM
-  text(charY, 800, 170); // POSIÇÃO PERSONAGEM
+  // fill("#fff");
+  // rect(780, 100, 100, 80, 20);
+  // fill(0);
+  // stroke(0);
+  // textSize(25);
+  // text(state, 800, 120); // ESTADO DO PERSONAGEM
+  // text(charX, 800, 150); // POSIÇÃO PERSONAGEM
+  // text(charY, 800, 170); // POSIÇÃO PERSONAGEM
 
   if (mouseX > 35 && mouseX < 135 && mouseY > 35 && mouseY < 65) {
     fill("#A9A9A9");
@@ -53,6 +53,7 @@ function drawfase1() {
   }
    
   image(comando, 350, 618, 160, 80); // COMANDO
+
 
   // Desenho das plataformas
   image(plataforma, 100, 200, 100, 35);
@@ -96,6 +97,7 @@ function drawfase1() {
   queda();
   captura();
   passarfase();
+  life();
 }
 
 function keyPressed() {
@@ -221,6 +223,8 @@ function captura() {
       poliwagcapturado = false;
       beedrillcapturado = false;
       capturados = 0;
+      perderVida()
+      
     }
   }
   if (charY > 145 && charY < 175 && charX > 685 && charX < 785 && keyIsDown(69)) {//CAPTURA BEEDRILL

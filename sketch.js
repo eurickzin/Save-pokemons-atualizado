@@ -51,6 +51,13 @@ var arbok;
 var eevee;
 var miau;
 var butterfree;
+var vidas3;
+var vidas2;
+var vidas1;
+var vidas0;
+
+var vidas = 3;
+var vidaPerdida = false;
 
 function preload(){
   fundo = loadImage("imagensfase1/fundo.png");
@@ -69,6 +76,10 @@ function preload(){
   snorlax = loadImage("imagensfase1/snorlax.png");
   gengar = loadImage("imagensfase1/gengar.png");
   charmander = loadImage("imagensfase1/charmander.png");
+  vidas3 = loadImage("imagensfase3/3vidas.png");
+  vidas2 = loadImage("imagensfase3/2vidas.png");
+  vidas1 = loadImage("imagensfase3/1vida.png");
+  vidas0 = loadImage("imagensfase3/0vidas.png");
   
   //IMAGENS FASE 1
   ceu = loadImage("imagensfase1/ceu.png");
@@ -117,7 +128,6 @@ function preload(){
 function setup() {
   
   createCanvas(900, 700);
-  
   textFont(fontepop);
   
 }
@@ -127,13 +137,13 @@ function draw() {
   if(tela == 0){//MENU 
     background(fundo);
     
-    fill("#fff");
-    rect(780, 15, 100, 80,20)
-    var mouse = `X: ${mouseX}\nY: ${mouseY}`;
-    fill(0);
-    stroke(0);
-    textSize(25);
-    text(mouse, 800, 45); //POSIÇÃO DO MOUSE
+    // fill("#fff");
+    // rect(780, 15, 100, 80,20)
+    // var mouse = `X: ${mouseX}\nY: ${mouseY}`;
+    // fill(0);
+    // stroke(0);
+    // textSize(25);
+    // text(mouse, 800, 45); //POSIÇÃO DO MOUSE
     
     
     if (mouseX > 200 && mouseX < 700 && mouseY > 300 && mouseY < 380){// BOTÃO JOGAR
@@ -344,6 +354,28 @@ function draw() {
     if (keyIsDown(80)){
       tela = 7;
     }
+  }
+}
+
+function perderVida() {
+  if (!vidaPerdida) {
+    vidas--;
+    vidaPerdida = true;
+  }
+}
+
+function life(){
+  if(vidas == 3){
+    image(vidas3,780, 0, 100, 60 )
+  }
+  if(vidas == 2){
+    image(vidas2,780, 0, 100, 60 )
+  }
+  if(vidas == 1){
+    image(vidas1,780, 0, 100, 60 )
+  }
+  if(vidas == 0){
+    image(vidas0,780, 0, 100, 60 )
   }
 }
 

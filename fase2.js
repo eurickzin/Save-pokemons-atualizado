@@ -9,13 +9,22 @@ var passandofase2 = false;
 
 function drawfase2(){
     background(fundofase2);
-    fill("#fff");
-    rect(780, 15, 100, 80, 20);
-    var mouse = `X: ${mouseX}\nY: ${mouseY}`;
-    fill(0);
-    stroke(0);
-    textSize(25);
-    text(mouse, 800, 45); // POSIÇÃO DO MOUSE
+    // fill("#fff");
+    // rect(780, 15, 100, 80, 20);
+    // var mouse = `X: ${mouseX}\nY: ${mouseY}`;
+    // fill(0);
+    // stroke(0);
+    // textSize(25);
+    // text(mouse, 800, 45); // POSIÇÃO DO MOUSE
+    
+    // fill("#fff");
+    // rect(780, 100, 100, 80, 20);
+    // fill(0);
+    // stroke(0);
+    // textSize(25);
+    // text(state, 800, 120); // ESTADO DO PERSONAGEM
+    // text(charX, 800, 150); // POSIÇÃO PERSONAGEM
+    // text(charY, 800, 170); // POSIÇÃO PERSONAGEM
 
     text(capturados2, 700, 30); // Contador de capturados
 
@@ -25,14 +34,7 @@ function drawfase2(){
         image(infoicone, 425, 20, 50, 50);
       }
     
-    fill("#fff");
-    rect(780, 100, 100, 80, 20);
-    fill(0);
-    stroke(0);
-    textSize(25);
-    text(state, 800, 120); // ESTADO DO PERSONAGEM
-    text(charX, 800, 150); // POSIÇÃO PERSONAGEM
-    text(charY, 800, 170); // POSIÇÃO PERSONAGEM
+   
 
     if (capturados2 < 3) {
         image(porta, 730, 485, 150, 140); // PORTA
@@ -80,6 +82,7 @@ function drawfase2(){
     queda2();
     captura2();
     passarfase2();
+    life();
 }
 
 function colisaoPorBaixo2() {

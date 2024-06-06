@@ -10,13 +10,24 @@ var venonatcapturado = false;
 function drawfase3(){
     background(fundofase3);
 
-    fill("#fff");
-    rect(780, 15, 100, 80, 20);
-    var mouse = `X: ${mouseX}\nY: ${mouseY}`;
-    fill(0);
-    stroke(0);
-    textSize(25);
-    text(mouse, 800, 45); // POSIÇÃO DO MOUSE
+    // fill("#fff");
+    // rect(780, 15, 100, 80, 20);
+    // var mouse = `X: ${mouseX}\nY: ${mouseY}`;
+    // fill(0);
+    // stroke(0);
+    // textSize(25);
+    // text(mouse, 800, 45); // POSIÇÃO DO MOUSE
+
+    // fill("#fff");
+    // rect(780, 100, 100, 80, 20);
+    // fill(0);
+    // stroke(0);
+    // textSize(25);
+    // text(state, 800, 120); // ESTADO DO PERSONAGEM
+    // text(charX, 800, 150); // POSIÇÃO PERSONAGEM
+    // text(charY, 800, 170); // POSIÇÃO PERSONAGEM
+
+    text(capturados3, 700, 30); // Contador de capturados
 
     text(capturados3, 700, 30); // Contador de capturados
 
@@ -25,17 +36,6 @@ function drawfase3(){
       } else {
         image(infoicone, 425, 20, 50, 50);
       }
-    
-    fill("#fff");
-    rect(780, 100, 100, 80, 20);
-    fill(0);
-    stroke(0);
-    textSize(25);
-    text(state, 800, 120); // ESTADO DO PERSONAGEM
-    text(charX, 800, 150); // POSIÇÃO PERSONAGEM
-    text(charY, 800, 170); // POSIÇÃO PERSONAGEM
-    text(capturados3, 700, 30); // Contador de capturados
-
     if (capturados3 < 3) {
         image(porta, 730, 485, 150, 140); // PORTA
       } else {
@@ -79,9 +79,10 @@ function drawfase3(){
     drawCharacter();
     colisaoPorCima3();
     colisaoPorBaixo3();
-    queda3()
-    captura3()
-    passarfase3()
+    queda3();
+    captura3();
+    passarfase3();
+    life();
 }
 
 function colisaoPorCima3() {
