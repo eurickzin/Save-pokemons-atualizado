@@ -55,6 +55,9 @@ var vidas3;
 var vidas2;
 var vidas1;
 var vidas0;
+var telacreditos;
+var telayouwin;
+var telacontroles;
 
 var vidas = 3;
 var vidaPerdida = false;
@@ -80,6 +83,9 @@ function preload(){
   vidas2 = loadImage("imagensfase3/2vidas.png");
   vidas1 = loadImage("imagensfase3/1vida.png");
   vidas0 = loadImage("imagensfase3/0vidas.png");
+  telacreditos = loadImage("telas/creditos.png");
+  telayouwin = loadImage("telas/youwin.png");
+  telacontroles = loadImage("telas/controles.png");
   
   //IMAGENS FASE 1
   ceu = loadImage("imagensfase1/ceu.png");
@@ -195,15 +201,7 @@ function draw() {
     
    }//FIM JOGAR 1
   if(tela == 2){//CONTROLES
-    background(fundo2);
-    
-    fill("#fff");
-    rect(780, 15, 100, 80,20)
-    var mouse = `X: ${mouseX}\nY: ${mouseY}`;
-    fill(0);
-    stroke(0);
-    textSize(25);
-    text(mouse, 800, 45); //POSIÇÃO DO MOUSE
+    background(telacontroles);
     
     if(mouseX > 36 && mouseX < 186 && mouseY > 36 && mouseY < 86){//INICIO BOTAO VOLTAR
       
@@ -226,34 +224,11 @@ function draw() {
       text("VOLTAR", 52, 70 );
       
     }//FIM DO BOTÃO VOLTAR
-    
-    
-    fill("#fff");
-    rect(100, 250, 700, 350, 20);//CAIXA DOS CONTROLES
-    
-    image(wasd, 470, 290, 300, 300)//TECLAS DE CONTROLE
-    
-    fill(0);
-    textSize(40);
-    stroke(0);
-    text("USE AS SEGUINTES TECLAS PARA MOVIMENTAR O SEU PERSONAGEM", 120, 300, 400 )
-    
-    image(psyduck, 630, 60, 150, 200)
-    
-    
     
   }//FIM TELA 2
   if(tela == 3){//CRÉDITOS
-    background(fundo2);
-    fill("#fff");
-    rect(780, 15, 100, 80,20)
-    var mouse = `X: ${mouseX}\nY: ${mouseY}`;
-    fill(0);
-    stroke(0);
-    textSize(25);
-    textFont(fontepop);
-    text(mouse, 800, 45); //POSIÇÃO DO MOUSE
-    
+    background(telacreditos);
+
     if(mouseX > 36 && mouseX < 186 && mouseY > 36 && mouseY < 86){//INICIO BOTAO VOLTAR
       
       fill("#A9A9A9");
@@ -275,51 +250,6 @@ function draw() {
       text("VOLTAR", 52, 70 );
       
     }//FIM DO BOTÃO VOLTAR
-    
-    
-    image(rick, -76, -150, 1054, 600)
-    
-    fill("#fff");
-    rect(100, 290, 700, 110, 20);//CAIXA DOS CREDITOS
-    
-    fill(0);
-    textFont(fonte2p)
-    noStroke();
-    textSize(15);
-    text("Olá, sou Luis Henrique, estudante de Ciências e Tecnologia na Universidade Federal do Rio Grande do Norte. Espero que se divirta jogando na mesma intensidade que eu me diverti desenvolvendo!!! :D", 110, 320, 700)//TEXTO DOS CRÉDITOS
-    
-    image(gengar, 60, 150, 150, 150);
-    image(charmander, 650, 155, 150, 150);
-    
-    fill("#fff");
-    stroke(0);
-    rect(100, 420, 700, 100, 20)//CAIXA IDEIA DO JOGO
-    
-    fill(0);
-    noStroke();
-    textSize(15)
-    text("SAVE POKÉMONS é um jogo de plataforma onde você precisará saltar sobre o tipo de número que o nível pedir para manter seus pokémons à salvo.", 110, 450, 700 )//TEXTO EMAIL/CONTATO
-    
-    fill("#fff");
-    stroke(0);
-    rect(100, 540, 530, 40, 20);//CAIXA EMAIL/CONTATO
-    
-    fill(0);
-    textSize(15);
-    noStroke();
-    text("EMAIL: luis.santos.131@ufrn.edu.br", 110, 570, 600 )//TEXTO EMAIL/CONTATO
-    
-    fill("#fff");
-    stroke(0);
-    rect (100, 600, 495, 40, 20);//CAIXA PROFESSOR
-    
-    fill(0);
-    textSize(15)
-    noStroke();
-    text("PROFESSOR: Thales Aguiar de Lima", 110, 630, 500 )//TEXTO PROFESSOR
-    
-    image(snorlax, 580, 460, 300, 300)
-    
     
   }//FIM TELA 3
   if(tela == 4){//POKEDEX FASE 1
@@ -355,27 +285,37 @@ function draw() {
       tela = 7;
     }
   }
+  if(tela == 9){
+    background(telayouwin);
+
+    if(mouseX > 36 && mouseX < 186 && mouseY > 36 && mouseY < 86){//INICIO BOTAO VOLTAR
+      
+      fill("#A9A9A9");
+      rect(36, 36, 150, 50, 10);
+      
+      fill(0);
+      textSize(30);
+      text("CRÉDITOS", 52, 70 );
+      
+      image(voltar, -40, -39, 450, 250)
+      
+    }else{
+      
+      fill("#fff")
+      rect(36, 36, 150, 50, 10);//CAIXA VOLTAR
+      
+      fill(0);
+      textSize(30);
+      text("VOLTAR", 52, 70 );
+      
+    }//FIM DO BOTÃO VOLTAR
+  }
 }
 
 function perderVida() {
   if (!vidaPerdida) {
     vidas--;
     vidaPerdida = true;
-  }
-}
-
-function life(){
-  if(vidas == 3){
-    image(vidas3,780, 0, 100, 60 )
-  }
-  if(vidas == 2){
-    image(vidas2,780, 0, 100, 60 )
-  }
-  if(vidas == 1){
-    image(vidas1,780, 0, 100, 60 )
-  }
-  if(vidas == 0){
-    image(vidas0,780, 0, 100, 60 )
   }
 }
 
@@ -436,5 +376,13 @@ function mouseClicked(){//INICIO MOUSECLICKED
     }//FIM BOTÃO VOLTAR
     
   }//FIM TELA 3
+
+  if(tela == 9){
+    if (mouseX > 36 && mouseX < 186 && mouseY > 36 && mouseY < 86){//INICIO BOTÃO VOLTAR
+      
+      tela=3;
+      
+    }//FIM BOTÃO VOLTAR
+  }
   
 }//FIM MOUSECLICKED

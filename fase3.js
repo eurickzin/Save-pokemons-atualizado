@@ -82,7 +82,6 @@ function drawfase3(){
     queda3();
     captura3();
     passarfase3();
-    life();
 }
 
 function colisaoPorCima3() {
@@ -241,7 +240,7 @@ function queda3() {
   
     if (passandofase2) {
       if (charY >= 485 && charY <= 625 && charX > 730 && charX < 885 && keyIsDown(32)) {
-        tela = 0;
+        tela = 9;
         charX = 30;
         info = true;
         //Reset Pokémon

@@ -82,7 +82,6 @@ function drawfase2(){
     queda2();
     captura2();
     passarfase2();
-    life();
 }
 
 function colisaoPorBaixo2() {

@@ -97,7 +97,6 @@ function drawfase1() {
   queda();
   captura();
   passarfase();
-  life();
 }
 
 function keyPressed() {
@@ -111,25 +110,25 @@ function keyPressed() {
 function colisaoPorCima() {
   if (state == falling) {
     if (charY >= 470 && charY <= 475) {
-      if ((charX > 25 && charX < 150) || (charX > 270 && charX < 400) || (charX > 500 && charX < 600)) {
+      if ((charX >= 20 && charX < 150) || (charX > 270 && charX < 400) || (charX > 470 && charX < 600)) {
         state = idle;
         chaoY = 470;
       }
     }
     if (charY >= 370 && charY <= 375) {
-      if ((charX > 155 && charX < 255) || (charX > 440 && charX < 540) || (charX > 630 && charX < 730)) {
+      if ((charX > 155 && charX < 255) || (charX > 420 && charX < 540) || (charX > 630 && charX < 730)) {
         state = idle;
         chaoY = 370;
       }
     }
     if (charY >= 270 && charY <= 275) {
-      if ((charX > 0 && charX < 100) || (charX > 270 && charX < 400) || (charX > 540 && charX < 640)) {
+      if ((charX > 0 && charX < 100) || (charX > 270 && charX < 400) || (charX > 520 && charX < 640)) {
         state = idle;
         chaoY = 270;
       }
     }
     if (charY >= 170 && charY <= 175) {
-      if ((charX > 100 && charX < 200) || (charX > 450 && charX < 550) || (charX > 680 && charX < 780)) {
+      if ((charX > 100 && charX < 200) || (charX > 450 && charX < 550) || (charX > 660 && charX < 780)) {
         state = idle;
         chaoY = 270;
       }
@@ -165,27 +164,27 @@ function colisaoPorBaixo() {
 function queda() {
   if (state == idle) {
     if (charY < 580 && charY >= 470) {
-      if ((charX < 25 || charX > 125) && (charX < 275 || charX >= 390) && (charX < 475 || charX > 580)) {
+      if ((charX < 25 || charX >= 135) && (charX < 270 || charX >= 390) && (charX < 465 || charX > 580)) {
         state = falling;
         chaoY = 580;
       }
     }
 
     if (charY < 470 && charY >= 370) {
-      if ((charX < 155 || charX > 255) && (charX < 425 || charX > 525) && (charX < 625 || charX > 725)) {
+      if ((charX < 155 || charX > 255) && (charX < 420 || charX > 530) && (charX < 625 || charX > 725)) {
         state = falling;
         chaoY = 580;
       }
     }
 
     if (charY < 370 && charY >= 270) {
-      if ((charX < 0 || charX > 100) && (charX < 275 || charX > 400) && (charX < 540 || charX > 640)) {
+      if ((charX < 0 || charX > 100) && (charX < 275 || charX > 400) && (charX < 520 || charX > 640)) {
         state = falling;
         chaoY = 580;
       }
     }
     if (charY < 270 && charY >= 170) {
-      if ((charX < 100 || charX > 200) && (charX < 450 || charX > 550) && (charX < 680 || charX > 780)) {
+      if ((charX < 100 || charX > 200) && (charX < 450 || charX > 550) && (charX < 660 || charX > 750)) {
         state = falling;
         chaoY = 580;
       }
